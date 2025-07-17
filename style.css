@@ -1,0 +1,244 @@
+body {
+  height: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: #54575a;
+}
+
+/* Video background container */
+.pimg1 {
+  position: relative;
+  height: 107vh;
+  overflow: hidden;
+}
+
+/* Video element styled to behave like background */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Image-based parallax sections */
+.pimg2 {
+  background-image: url(assets/grey.jpg);
+  min-height: 195px;
+}
+
+.pimg3 {
+  background-image: url(images/image3.png);
+  min-height: 400px;
+}
+
+.pimg2,
+.pimg3 {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.ptext {
+  position: absolute;
+  top: 42%; /* moved a bit above center */
+  width: 100%;
+  max-width: none; /* no max width restriction */
+  padding: 0 20px; /* horizontal padding */
+  box-sizing: border-box;
+  text-align: center;
+  color: black;
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  transform: translateY(-42%);
+}
+
+.textBg {
+  background: #313534;
+  color: #fff;
+  padding: 20px;
+}
+
+.section {
+  padding: 50px 80px;
+  text-align: center;
+}
+
+.section-light {
+  background-color: #f4f4f4;
+  color: #4b4b4b;
+}
+
+.section-dark {
+  background-color: #282e34;
+  color: #ddd;
+}
+
+.ptext small {
+  display: block;
+  font-size: 14px;
+  margin-top: 20px; /* space between main and small text */
+  color: #303136;
+}
+
+.centered-image {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 850px; /* large but responsive */
+  height: auto;
+}
+.navbar .logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+.navbar .logo {
+  font-family: 'Michroma', sans-serif;
+  font-size: 24px;
+  color: #fff;
+}
+.highlight-box {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.329); 
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.highlight-box .main-text {
+  font-family: 'Michroma', sans-serif;
+  color: #303136;
+  font-size: 28px;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+.underline {
+  text-decoration: underline;
+}
+.inquiry-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: white;
+  padding: 60px 50px; /* more top/bottom padding */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.inquiry-form label {
+  display: block;
+  margin-bottom: 25px; /* more space below each label */
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.inquiry-form input,
+.inquiry-form select {
+  width: 100%;
+  padding: 14px 15px; /* taller input fields */
+  margin-top: 10px; /* more space above inputs */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.inquiry-form button {
+  display: block;
+  width: 100%;
+  padding: 18px;
+  background-color: #0b2042;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.inquiry-form button:hover {
+  background-color: #083354;
+}
+
+/* =========================
+   Stats Section - Horizontal
+=========================== */
+
+.pimg3 .ptext {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center all children horizontally */
+  text-align: center;  /* center text inside */
+}
+
+.stats-container-horizontal {
+  display: flex;
+  justify-content: center; /* center the flex row */
+  gap: 60px;
+  max-width: 900px;
+  width: 100%;
+  flex-wrap: wrap; /* wrap on small screens */
+  margin-top: 40px;
+}
+
+.stat-box {
+  min-width: 120px;
+  text-align: center; /* center text inside each box */
+}
+
+.stat-number {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: white;
+  font-family: 'Michroma', sans-serif;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-top: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.95rem;
+  }
+
+  .stats-container-horizontal {
+    gap: 30px;
+  }
+}
+.stat-number {
+  color: #000000 !important; /* Dark charcoal */
+}
+
+.stat-label {
+  color: #444444 !important; /* Medium dark gray */
+}.stat-number {
+  font-family: 'Manufacturing Consent', sans-serif;
+  font-family: 'Manufacturing Consent', sans-serif;
+  font-weight: 400; /* Adjust weight as needed */
+  font-size: 4rem;
+}
+.menu-grid img {
+  width: 1000px;
+  height: 700px;
+  object-fit: cover;
+  display: block;
+}

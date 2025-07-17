@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medinas Cleaning LLC.</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* Navbar Styles */
+      .navbar {
+        background-color: #0b2042;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        display: block;
+        font-family: 'Michroma', sans-serif;
+      }
+
+      .navbar a:hover {
+        background-color: #575757;
+      }
+
+      .navbar .nav-links {
+        display: flex;
+      }
+
+      .navbar .logo {
+        font-family: 'Michroma', sans-serif;
+        font-size: 20px;
+        color: white;
+        font-weight: normal;
+      }
+
+      /* Back Button */
+      .back-button {
+        margin: 20px;
+        margin-top: 30px;
+      }
+
+      .back-button a {
+        font-family: 'Montserrat', sans-serif;
+        color: #0b2042;
+        text-decoration: none;
+        font-size: 1rem;
+        background-color: #ffffff;
+        padding: 10px 16px;
+        border-radius: 6px;
+        display: inline-block;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .back-button a:hover {
+        background-color: #d0d0d0;
+        color: #000000;
+      }
+
+      /* Hamburger Icon */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 25px;
+        height: 20px;
+        cursor: pointer;
+      }
+
+      .hamburger div {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: #0b2042;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 0px;
+        font-family: 'Michroma', sans-serif;
+      }
+
+      /* Inquiry Form */
+      .inquiry-section {
+        background-color: #f4f4f4;
+        padding: 60px 20px;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .inquiry-container {
+        max-width: 700px;
+        margin: 40px auto;
+        background: white;
+        padding: 60px 50px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+
+      .inquiry-container h2 {
+        margin-bottom: 30px;
+      }
+
+      .inquiry-form label {
+        display: block;
+        margin-bottom: 25px;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      .inquiry-form select,
+      .inquiry-form input {
+        width: 100%;
+        padding: 14px 15px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+
+      .inquiry-form button {
+        display: block;
+        width: 100%;
+        padding: 18px;
+        background-color: #0b2042;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+      }
+
+      .inquiry-form button:hover {
+        background-color: #083354;
+      }
+
+      .company-section {
+        background-color: #5e6163;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        padding: 80px 40px;
+      }
+
+      .company-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 40px;
+      }
+
+      .company-left {
+        flex: 1;
+        min-width: 300px;
+        max-width: 650px;
+        margin-bottom: 40px;
+      }
+
+      .company-left h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .company-left h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 1.3;
+        margin: 20px 0;
+      }
+
+      .company-left p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .company-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 40px;
+        min-width: 250px;
+      }
+
+      .info-block h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .info-block p {
+        font-size: 1rem;
+        margin: 4px 0;
+      }
+
+      .info-block hr {
+        width: 40px;
+        border: 1px solid white;
+        margin: 10px 0;
+      }
+
+      .phone {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .services-button {
+        margin-top: 30px;
+        padding: 15px 30px;
+        background-color: #345a96;
+        color: white;
+        font-size: 1.2rem;
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .services-button:hover {
+        background-color: #092c5c;
+      }
+      .service-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.service-content h1,
+.service-content h2 {
+  color: #0b2042;
+  margin-top: 30px;
+}
+
+.service-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.service-content a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.service-content a:hover {
+  text-decoration: underline;
+}
+
+      /* Responsive styles for mobile */
+      @media (max-width: 600px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 10px 20px;
+        }
+
+        .navbar .nav-links {
+          flex-direction: column;
+          width: 100%;
+          display: none;
+        }
+
+        .navbar .nav-links.active {
+          display: flex;
+        }
+
+        .hamburger {
+          display: flex;
+          position: absolute;
+          top: 15px;
+          right: 20px;
+          z-index: 1100;
+        }
+
+        .inquiry-container {
+          padding: 30px 20px;
+          max-width: 100%;
+          margin: 20px auto;
+        }
+
+        .company-content {
+          flex-direction: column;
+          padding: 0 20px;
+        }
+
+        .company-left,
+        .company-right {
+          max-width: 100%;
+          margin-bottom: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+   <div class="navbar" aria-label="Primary Navigation" role="navigation" tabindex="0">
+      <div class="logo">Medinas Cleaning</div>
+
+      <!-- Hamburger icon dummy -->
+      <div class="hamburger" aria-hidden="true" tabindex="-1">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+      <a href="javascript:history.back()">&lt; Back</a>
+    </div>
+
+<section class="service-content">
+  <h1>Greater Minnesota Area Window Washing:</h1>
+  <h2>Let the Sunshine In with Crystal-Clear Windows</h2>
+  <p>Medinas Cleaning LLC proudly offers professional window cleaning services throughout the Greater Minnesota area. We help homes and businesses shine—inside and out—with streak-free, sparkling windows that make a difference.</p>
+
+  <p>Clean windows enhance curb appeal, boost natural light, and improve the overall appearance of your property. Whether you're preparing for guests, staging a home, or simply want to enjoy the view, our team is here to help.</p>
+
+  <p>We use eco-friendly solutions and professional tools to safely and effectively clean your windows—without damage, drips, or residue. From small homes to large properties, no job is too big or too small.</p>
+
+  <p>Our window cleaning service is available as a one-time job or as part of a recurring maintenance plan. Either way, you can count on Medinas Cleaning for clear results every time.</p>
+
+  <h2>What Is Window Washing?</h2>
+  <p>Window cleaning involves removing dirt, dust, smudges, and hard water stains from glass surfaces, frames, and sills. It’s a detail-oriented service that improves visibility, prolongs window life, and elevates your property’s appearance—both inside and out.</p>
+
+  <p>We take care of both **interior and exterior** windows (where safely accessible), including multi-pane windows, sliding doors, and specialty glass. Our technicians are trained to work safely and efficiently, using ladders and tools when necessary to reach higher levels.</p>
+
+  <h2>Our Window Cleaning Services Include:</h2>
+  <p>Here’s what’s typically included in our window cleaning appointments:</p>
+  <ul>
+    <li>Interior and exterior window glass cleaning</li>
+    <li>Washing and wiping of window sills and frames</li>
+    <li>Removal of smudges, fingerprints, and streaks</li>
+    <li>Screen cleaning (if applicable)</li>
+    <li>Hard water stain and debris removal (when possible)</li>
+    <li>Sliding glass doors and entry glass cleaning</li>
+  </ul>
+
+  <p>Our window cleaning experts are courteous, punctual, and fully equipped to leave your glass spotless. Let Medinas Cleaning help brighten your space—one window at a time.</p>
+</section>
+
+
+
+
+    <!-- Inquiry Form -->
+    <section class="inquiry-section">
+      <div class="inquiry-container">
+        <h2>Service Inquiry:</h2>
+        <form action="https://formsubmit.co/ef0fc3d6054313755d8fb30cb0b7b426" method="POST" class="inquiry-form">
+          <label>
+            Service Type
+            <select name="Service Inquiry" required>
+              <option value="" disabled selected>Select a Service...</option>
+              <option>Home Cleaning</option>
+              <option>Window Washing</option>
+              <option>Commercial Cleaning</option>
+              <option>Move-In/Move-Out Cleaning</option>
+              <option>Floor Cleaning</option>
+              <option>Carpet Cleaning</option>
+            </select>
+          </label>
+
+          <label>
+            Name
+            <input type="text" name="Name" required />
+          </label>
+
+          <label>
+            Phone Number
+            <input type="tel" name="Phone Number" required />
+          </label>
+
+          <label>
+            Email Address
+            <input type="email" name="Email Address" required />
+          </label>
+
+          <label>
+            Best Time to Call
+            <input type="datetime-local" name="Best Time to Call" required />
+          </label>
+
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="index.html" />
+
+          <button type="submit">Submit Inquiry</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Our Company Section -->
+    <section class="company-section">
+      <div class="company-content">
+        <div class="company-left">
+          <h3>OUR COMPANY</h3>
+          <h2>WE TAKE THE STRESS OUT OF YOUR MESS!</h2>
+          <p>
+            Are you tired of seeing those old stains on your carpet that have been there for too long?
+            Perhaps you need a helping hand to keep your home immaculate so that you can spend your free time with your family?
+            Or maybe you are looking for a local, experienced janitorial cleaning team to help make your business shine?
+            Whatever the case may be, Medinas Cleaning LLC is here to help.
+          </p>
+          <p>
+            Medinas Cleaning LLC is a family-owned. We are your one-stop cleaning shop so that you don’t have to call around
+            to different companies for your carpet cleaning, home cleaning, and janitorial cleaning — we do it all for you!
+            We truly care about providing quality care to each and every client.
+          </p>
+        </div>
+
+        <div class="company-right">
+          <div class="info-block">
+            <h4>Head Office</h4>
+            <p>8080 Eden RD, Eden Prairie MN, 55344</p>
+            <hr />
+            <p class="phone">651-338-1057</p>
+          </div>
+
+          <div class="info-block">
+            <h4>Operating Hours</h4>
+            <p>Mon – Fri: 8am – 8pm</p>
+            <p>Saturday: 9am – 7pm</p>
+            <p>Sunday: 9am – 8pm</p>
+          </div>
+          <div class="company-button-wrapper">
+            <a href="about.html" class="services-button">More About Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+<footer>
+  &copy; 2021–<span id="year"></span> Medinas Cleaning LLC. All rights reserved.
+</footer>
+
+<script>
+  // Automatically set the current year in footer (e.g., 2021–2025)
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+  // Only run toggle logic on mobile
+  function isMobile() {
+    return window.matchMedia("(max-width: 600px)").matches;
+  }
+
+  const navbar = document.querySelector('.navbar');
+  const navLinks = document.querySelector('.nav-links');
+
+  function toggleNav() {
+    navLinks.classList.toggle('active');
+  }
+
+  if (isMobile()) {
+    navbar.addEventListener('click', toggleNav);
+    // Keyboard accessibility
+    navbar.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleNav();
+      }
+    });
+  }
+
+  // Re-apply event listener if window resizes
+  window.addEventListener('resize', () => {
+    if (isMobile()) {
+      navbar.addEventListener('click', toggleNav);
+    } else {
+      navLinks.classList.remove('active');
+      navbar.removeEventListener('click', toggleNav);
+    }
+  });
+</script>
+
+<script>
+  const video = document.getElementById('bgVideo');
+  const fallback = document.getElementById('videoFallback');
+
+  video.play().catch(() => {
+    video.style.display = 'none';
+    fallback.style.display = 'block';
+  });
+</script>
+</body>
+</html>

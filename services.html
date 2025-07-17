@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medinas Cleaning LLC.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* Original styles unchanged */
+      .menu-section {
+        padding: 40px;
+        text-align: center;
+      }
+
+      .menu-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      /* Add scroll container styles */
+      .menu-scroll-container {
+        max-width: 700px;
+        margin: 0 auto;
+        overflow: visible;
+        height: auto;
+      }
+
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        justify-items: center;
+        max-width: 700px;
+      }
+
+      .menu-item {
+        max-width: 320px;
+      }
+
+      .menu-item img {
+        width: 291px;
+        height: 159px;
+        object-fit: cover;
+        display: block;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu-item h3 {
+        margin-top: 12px;
+        font-size: 1.25rem;
+      }
+
+      /* ... [rest of your CSS remains unchanged] ... */
+
+      /* Responsive styles */
+      @media (max-width: 600px) {
+        /* Scroll container enables vertical scroll */
+        .menu-scroll-container {
+          max-width: 100vw;
+          height: 80vh; /* adjust as needed */
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+
+        .menu-grid {
+          grid-template-columns: 1fr !important;
+          gap: 20px;
+          justify-items: center;
+        }
+
+        /* Your other mobile styles remain unchanged */
+      }
+
+      @media (max-width: 400px) {
+        .menu-item img {
+          width: 90vw;
+          height: auto;
+        }
+      }
+
+      /* Navbar and other styles below unchanged */
+      .navbar {
+        background-color: #0b2042;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar a {
+        color: white;
+        padding: 14px 20px;
+        text-decoration: none;
+        display: block;
+        font-family: 'Michroma', sans-serif;
+      }
+
+      .navbar a:hover {
+        background-color: #575757;
+      }
+
+      .navbar .nav-links {
+        display: flex;
+      }
+
+      .navbar .logo {
+        font-family: 'Michroma', sans-serif;
+        font-size: 20px;
+        color: white;
+        font-weight: normal;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 25px;
+        height: 20px;
+        cursor: pointer;
+      }
+
+      .hamburger div {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+      }
+
+      footer {
+        background-color: #0b2042;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 0px;
+        font-family: 'Michroma', sans-serif;
+      }
+
+      .why-choose {
+        text-align: center;
+        padding: 80px 20px;
+        background-color: #2c3136;
+        font-family: 'Michroma', sans-serif;
+      }
+
+      .why-choose h2 {
+        color: #ffffff;
+        font-size: 2rem;
+        letter-spacing: 1px;
+      }
+
+      .features {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+        gap: 40px;
+      }
+
+      .feature {
+        color: #ffffff;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        max-width: 180px;
+        position: relative;
+        padding: 0 20px;
+      }
+
+      .feature:not(:first-child)::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: #ffffff;
+        opacity: 0.4;
+      }
+
+      .pimg2 .ptext {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+      }
+
+      .pimg2 .main-text {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      .services-section {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #4481aa;
+        color: #ffffff;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .services-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        letter-spacing: 2px;
+      }
+
+      .services-section ul {
+        list-style-type: disc;
+        max-width: 250px;
+        margin: 0 auto;
+        padding-left: 20px;
+        font-size: 1.3rem;
+        line-height: 1.6;
+        display: inline-block;
+        text-align: left;
+      }
+
+      .company-section {
+        background-color: #5e6163;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        padding: 80px 40px;
+      }
+
+      .company-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 40px;
+      }
+
+      .company-left {
+        flex: 1;
+        min-width: 300px;
+        max-width: 650px;
+        margin-bottom: 40px;
+      }
+
+      .company-left h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+      }
+
+      .company-left h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 1.3;
+        margin: 20px 0;
+      }
+
+      .company-left p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .company-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 40px;
+        min-width: 250px;
+      }
+
+      .info-block h4 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .info-block p {
+        font-size: 1rem;
+        margin: 4px 0;
+      }
+
+      .info-block hr {
+        width: 40px;
+        border: 1px solid white;
+        margin: 10px 0;
+      }
+
+      .phone {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .inquiry-section {
+        background-color: #f4f4f4;
+        padding: 60px 20px;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .inquiry-container {
+        max-width: 700px;
+        margin: 40px auto;
+        background: white;
+        padding: 60px 50px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+
+      .inquiry-container h2 {
+        margin-bottom: 30px;
+      }
+
+      .inquiry-form label {
+        display: block;
+        margin-bottom: 25px;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      .inquiry-form select,
+      .inquiry-form input {
+        width: 100%;
+        padding: 14px 15px;
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+
+      .inquiry-form button {
+        display: block;
+        width: 100%;
+        padding: 18px;
+        background-color: #0b2042;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+      }
+
+      .inquiry-form button:hover {
+        background-color: #083354;
+      }
+
+      /* Responsive styles for mobile */
+      @media (max-width: 600px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 10px 20px;
+          cursor: pointer;
+          user-select: none;
+          position: sticky;
+          top: 0;
+          background-color: #0b2042;
+          z-index: 1000;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .nav-links {
+          flex-direction: column;
+          width: 100%;
+          display: none;
+        }
+
+        .navbar .nav-links.active {
+          display: flex;
+        }
+
+        .navbar a {
+          padding: 10px 0;
+          font-size: 14px;
+        }
+
+        .hamburger {
+          display: flex;
+          position: absolute;
+          top: 15px;
+          right: 20px;
+          z-index: 1100;
+        }
+
+        .features {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .feature {
+          max-width: 100%;
+          padding: 0;
+          position: static;
+        }
+
+        .feature:not(:first-child)::before {
+          display: none;
+        }
+
+        .services-section ul {
+          max-width: 100%;
+          padding-left: 20px;
+          font-size: 20.8px;
+        }
+
+        .company-content {
+          flex-direction: column;
+          padding: 0 20px;
+        }
+
+        .company-left,
+        .company-right {
+          max-width: 100%;
+          margin-bottom: 40px;
+        }
+
+        .inquiry-container {
+          padding: 30px 20px;
+          max-width: 100%;
+          margin: 20px auto;
+        }
+
+        .why-choose h2,
+        .services-section h2,
+        .company-left h2 {
+          font-size: 32px;
+        }
+
+        .pimg2 .main-text {
+          font-size: 48px;
+        }
+
+        .highlight-box .main-text {
+          font-size: 1.4rem;
+        }
+
+        video::-webkit-media-controls-start-playback-button {
+          display: none !important;
+          -webkit-appearance: none;
+        }
+
+        .video-fallback {
+          display: none;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+        }
+      }
+
+      video.bg-video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .centered-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .highlight-box .main-text {
+        font-size: 2rem;
+      }
+
+      .services-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .services-button {
+        margin-top: 30px;
+        padding: 15px 30px;
+        background-color: #345a96;
+        color: white;
+        font-size: 1.2rem;
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .services-button:hover {
+        background-color: #092c5c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar" aria-label="Primary Navigation" role="navigation" tabindex="0">
+      <div class="logo">Medinas Cleaning</div>
+
+      <!-- Hamburger icon dummy -->
+      <div class="hamburger" aria-hidden="true" tabindex="-1">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About Us</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+   <section class="menu-section">
+  <h2>Services We Offer:</h2>
+  <div class="menu-scroll-container">
+    <div class="menu-grid">
+      <a href="home.html" class="menu-item">
+        <img src="assets/clean.avif" alt="Home Cleaning" />
+        <h3>Home Cleaning</h3>
+      </a>
+      <a href="window.html" class="menu-item">
+        <img src="assets/window.avif" alt="Window Washing" />
+        <h3>Window Washing</h3>
+      </a>
+      <a href="commercial.html" class="menu-item">
+        <img src="assets/commercial.avif" alt="Commercial Cleaning" />
+        <h3>Commercial Cleaning</h3>
+      </a>
+      <a href="move.html" class="menu-item">
+        <img src="assets/moving.avif" alt="Move-in/Move-out Cleaning" />
+        <h3>Move-in/Move-out Cleaning</h3>
+      </a>
+      <a href="floor.html" class="menu-item">
+        <img src="assets/floor.avif" alt="Floor Cleaning" />
+        <h3>Floor Cleaning</h3>
+      </a>
+      <a href="carpet.html" class="menu-item">
+        <img src="assets/carpet.avif" alt="Carpet Cleaning" />
+        <h3>Carpet Cleaning</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- Inquiry Form -->
+    <section class="inquiry-section">
+      <div class="inquiry-container">
+        <h2>Service Inquiry:</h2>
+        <form
+          action="https://formsubmit.co/ef0fc3d6054313755d8fb30cb0b7b426"
+          method="POST"
+          class="inquiry-form"
+        >
+          <label>
+            Service Type
+            <select name="Service Inquiry" required>
+              <option value="" disabled selected>Select a Service...</option>
+              <option>Home Cleaning</option>
+              <option>Window Washing</option>
+              <option>Commercial Cleaning</option>
+              <option>Move-In/Move-Out Cleaning</option>
+              <option>Floor Cleaning</option>
+              <option>Carpet Cleaning</option>
+            </select>
+          </label>
+
+          <label>
+            Name
+            <input type="text" name="Name" required />
+          </label>
+
+          <label>
+            Phone Number
+            <input type="tel" name="Phone Number" required />
+          </label>
+
+          <label>
+            Email Address
+            <input type="email" name="Email Address" required />
+          </label>
+
+          <label>
+            Best Time to Call
+            <input type="datetime-local" name="Best Time to Call" required />
+          </label>
+
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="index.html" />
+
+          <button type="submit">Submit Inquiry</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Our Company Section -->
+    <section class="company-section">
+      <div class="company-content">
+        <div class="company-left">
+          <h3>OUR COMPANY</h3>
+          <h2>WE TAKE THE STRESS OUT OF YOUR MESS!</h2>
+          <p>
+            Are you tired of seeing those old stains on your carpet that have
+            been there for too long? Perhaps you need a helping hand to keep
+            your home immaculate so that you can spend your free time with your
+            family? Or maybe you are looking for a local, experienced janitorial
+            cleaning team to help make your business shine? Whatever the case
+            may be, Medinas Cleaning LLC is here to help.
+          </p>
+          <p>
+            Medinas Cleaning LLC is a family-owned. We are your one-stop
+            cleaning shop so that you don’t have to call around to different
+            companies for your carpet cleaning, home cleaning, and janitorial
+            cleaning — we do it all for you! We truly care about providing
+            quality care to each and every client.
+          </p>
+        </div>
+
+        <div class="company-right">
+          <div class="info-block">
+            <h4>Head Office</h4>
+            <p>8080 Eden RD, Eden Prairie MN, 55344</p>
+            <hr />
+            <p class="phone">651-338-1057</p>
+          </div>
+
+          <div class="info-block">
+            <h4>Operating Hours</h4>
+            <p>Mon – Fri: 8am – 8pm</p>
+            <p>Saturday: 9am – 7pm</p>
+            <p>Sunday: 9am – 8pm</p>
+          </div>
+          <div class="company-button-wrapper">
+            <a href="about.html" class="services-button">More About Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2021–<span id="year"></span> Medinas Cleaning LLC. All rights reserved.
+</footer>
+
+<script>
+  // Automatically set the current year in footer (e.g., 2021–2025)
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+  // Only run toggle logic on mobile
+  function isMobile() {
+    return window.matchMedia("(max-width: 600px)").matches;
+  }
+
+  const navbar = document.querySelector('.navbar');
+  const navLinks = document.querySelector('.nav-links');
+
+  function toggleNav() {
+    navLinks.classList.toggle('active');
+  }
+
+  if (isMobile()) {
+    navbar.addEventListener('click', toggleNav);
+    // Keyboard accessibility
+    navbar.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleNav();
+      }
+    });
+  }
+
+  // Re-apply event listener if window resizes
+  window.addEventListener('resize', () => {
+    if (isMobile()) {
+      navbar.addEventListener('click', toggleNav);
+    } else {
+      navLinks.classList.remove('active');
+      navbar.removeEventListener('click', toggleNav);
+    }
+  });
+</script>
+
+<script>
+  const video = document.getElementById('bgVideo');
+  const fallback = document.getElementById('videoFallback');
+
+  video.play().catch(() => {
+    video.style.display = 'none';
+    fallback.style.display = 'block';
+  });
+</script>
+</body>
+</html>
