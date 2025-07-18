@@ -520,11 +520,11 @@
 <section class="inquiry-section">
   <div class="inquiry-container">
     <h2>Service Inquiry:</h2>
-    <form action="https://formsubmit.co/medinascleaninllcc@gmail.com" method="POST" class="inquiry-form">
+    <form action="https://formsubmit.co/medinascleaningllcc@gmail.com" method="POST" class="inquiry-form">
       
       <label>
         Service Type
-        <select name="Service Inquiry" required>
+        <select name="Service Type" required>
           <option value="" disabled selected>Select a Service...</option>
           <option>Home Cleaning</option>
           <option>Window Washing</option>
@@ -534,6 +534,38 @@
           <option>Carpet Cleaning</option>
         </select>
       </label>
+
+      <label>
+        Name
+        <input type="text" name="Name" required />
+      </label>
+
+      <label>
+        Phone Number
+        <input type="tel" name="Phone" required />
+      </label>
+
+      <label>
+        Email Address
+        <input type="email" name="Email" required />
+      </label>
+
+      <label>
+        Best Time to Call
+        <input type="datetime-local" name="Best Time to Call" required />
+      </label>
+
+      <!-- Hidden Fields -->
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_subject" value="New Cleaning Inquiry from Website" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_next" value="index.html" />
+
+      <button type="submit">Submit Inquiry</button>
+    </form>
+  </div>
+</section>
+
 
       <label>
         Name
