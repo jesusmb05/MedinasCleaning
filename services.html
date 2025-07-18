@@ -556,54 +556,57 @@
 </section>
 
     <!-- Inquiry Form -->
-    <section class="inquiry-section">
-      <div class="inquiry-container">
-        <h2>Service Inquiry:</h2>
-        <form
-          action="https://formsubmit.co/ef0fc3d6054313755d8fb30cb0b7b426"
-          method="POST"
-          class="inquiry-form"
-        >
-          <label>
-            Service Type
-            <select name="Service Inquiry" required>
-              <option value="" disabled selected>Select a Service...</option>
-              <option>Home Cleaning</option>
-              <option>Window Washing</option>
-              <option>Commercial Cleaning</option>
-              <option>Move-In/Move-Out Cleaning</option>
-              <option>Floor Cleaning</option>
-              <option>Carpet Cleaning</option>
-            </select>
-          </label>
+   <main>
+  <section class="inquiry-section">
+    <div class="inquiry-container">
+      <h2>Service Inquiry:</h2>
+      <form action="https://formsubmit.co/d0b74a82e3be90579a293b08200093e6" method="POST" class="inquiry-form">
 
-          <label>
-            Name
-            <input type="text" name="Name" required />
-          </label>
+        <label>
+          Service Type
+          <select name="Service Inquiry" required>
+            <option value="" disabled selected>Select a Service...</option>
+            <option>Home Cleaning</option>
+            <option>Window Washing</option>
+            <option>Commercial Cleaning</option>
+            <option>Move-In/Move-Out Cleaning</option>
+            <option>Floor Cleaning</option>
+            <option>Carpet Cleaning</option>
+          </select>
+        </label>
 
-          <label>
-            Phone Number
-            <input type="tel" name="Phone Number" required />
-          </label>
+        <label>
+          Name
+          <input type="text" name="Name" required />
+        </label>
 
-          <label>
-            Email Address
-            <input type="email" name="Email Address" required />
-          </label>
+        <label>
+          Phone Number
+          <input type="tel" name="Phone Number" required />
+        </label>
 
-          <label>
-            Best Time to Call
-            <input type="datetime-local" name="Best Time to Call" required />
-          </label>
+        <label>
+          Email Address
+          <input type="email" name="Email Address" required />
+        </label>
 
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value="index.html" />
+        <label>
+          Best Time to Call
+          <input type="datetime-local" name="Best Time to Call" required />
+        </label>
 
-          <button type="submit">Submit Inquiry</button>
-        </form>
-      </div>
-    </section>
+        <!-- Hidden Fields -->
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="index.html" />
+        <input type="hidden" name="_subject" value="New Cleaning Inquiry from Website" />
+        <input type="hidden" name="_template" value="table" />
+
+        <button type="submit">Submit Inquiry</button>
+      </form>
+    </div>
+  </section>
+</main>
+
 
     <!-- Our Company Section -->
     <section class="company-section">
